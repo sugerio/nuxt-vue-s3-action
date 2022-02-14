@@ -1,0 +1,36 @@
+name: 'Github Release Action for Nuxt Vue S3'
+author: 'Suger Inc'
+branding:
+  icon: 'git-branch'
+  color: 'gray-dark'
+description: 'build Nuxt Vue single page app, deploy it to Amazon s3 bucket and Save version.zip on the artifact bucket'
+
+env:
+  AWS_ACCESS_KEY_ID:
+    description: "Amazon access key id"
+    required: true
+  AWS_SECRET_ACCESS_KEY:
+    description: "Amazon secret access key"
+    required: true
+  AWS_DEFAULT_REGION:
+    description: "Bucket region. (Ex: us-east-1)"
+    required: true
+  AWS_BUCKET_NAME_FOR_WEB:
+    description: "Aws s3 bucket name for static vue website hosting"
+    required: true
+  AWS_BUCKET_NAME_FOR_ARTIFACT:
+    description: "Aws s3 bucket name for artifact storage"
+    required: true
+  AWS_BUCKET_KEY_PREFIX:
+    description: "The prefix of artifact bucket key to store artifact object"
+    required: true
+  BUILD_VUE_COMMAND:
+    description: "The command to build vue Nuxt for static hosting. It should generate dist/ folder"
+    required: true
+  RELEASE_TAG:
+    description: "The git tag of Github release to upload to s3"
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
