@@ -27,4 +27,6 @@ echo "Successfully uploaded zip to $S3_RELEASE_ZIP"
 # Clean
 cd ../
 rm -rf dist_zip/
+rm -rf dist/
+rm -rf node_modules/
 echo "Successfully remove the dist_zip folder"
