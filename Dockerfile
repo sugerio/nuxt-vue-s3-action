@@ -1,4 +1,4 @@
-FROM node:17
+FROM node:16.14
 LABEL "repository"="https://github.com/sugerio/nuxt-vue-s3-action"
 LABEL "maintainer"="Suger Inc"
 LABEL "version"="1.0.0"
