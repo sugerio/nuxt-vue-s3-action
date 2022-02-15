@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Install dependencies
 echo "Installing dependencies"
 npm install > /dev/null 2>&1
